@@ -9,7 +9,7 @@ SCENE is an innovative method designed to classify encrypted traffic by utilizin
 
 #### 2. Quick Start Example
 
-You can quickly obtain sample results on Dataset A by running the `StatisticalFeatureAssignment.py` file with the following command:
+You can quickly obtain sample results on Dataset A by running the `main.py` file with the following command:
 
 ```
 python StatisticalFeatureAssignment.py 
