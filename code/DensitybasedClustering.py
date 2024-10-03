@@ -13,11 +13,6 @@ import matplotlib.pyplot as plt  # 导入Matplotlib库，用于绘图
 from collections import Counter
 from sklearn.metrics import precision_score, recall_score, f1_score, accuracy_score
 
-# 示例标签数组
-labels = np.array(['audio'] * 201 + ['file-trans'] * 280 + ['video'] * 256 + ['voip'] * 104 + ['unknown'] * 204)
-distance_matrix = np.load("../data/DatasetA/shape_based_distance_A.npy")
-
-
 def calculate_cluster_accuracy(true_labels, cluster_labels):
     unique_clusters = set(cluster_labels) - {-1}  # 获取所有非噪声点的聚类标签
     correct_count = 0  # 初始化正确聚类的样本计数
@@ -66,6 +61,10 @@ def evaluate_clustering(true_labels, cluster_labels):
     weighted_f1 = f1_score(filtered_true_labels, filtered_final_labels, average='weighted', zero_division=0)
 
     return accuracy, weighted_precision, weighted_recall, weighted_f1
+
+# 示例标签数组
+labels = np.array(['audio'] * 201 + ['file-trans'] * 280 + ['video'] * 256 + ['voip'] * 104 + ['unknown'] * 204)
+distance_matrix = np.load("../data/DatasetA/shape_based_distance_A.npy")
 
 # DBSCAN聚类
 # epses = [i*0.005 for i in range(1,40)]
